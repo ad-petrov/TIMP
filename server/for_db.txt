@@ -1,0 +1,14 @@
+//товары
+insert into products (id, name, price) values (1, 'Установка розеток и выключатлей', 250);
+insert into products (id, name, price) values (2, 'Повесить люстру', 390);
+insert into products (id, name, price) values (3, 'Ремонт ПК', 1090);
+insert into products (id, name, price) values (4, 'Сверление', 390);
+insert into products (id, name, price) values (5, 'Монтаж зеркал', 490);
+//промокоды
+insert into promos (id, promo, discount) values (1, 'secret123', 25);
+insert into promos (id, promo, discount) values (2, 'none', 0);
+insert into promos (id, promo, discount) values (3, 'ponchic', 10);
+
+
+
+
