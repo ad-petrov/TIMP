@@ -12,6 +12,14 @@ app.use(express.json())
 app.use(cors())
 app.use('/api', router)
 
+app.get('/:file', (req, res)=>{
+  res.sendFile(__dirname+'/public_html/'+req.params.file);
+});
+
+app.get('/', (req, res)=>{
+  res.sendFile(__dirname+'/public_html/index.html');
+});
+
 // app.get('/', (req, res)=>{
 //     res.status(200).json({'message':'working'})
 // })

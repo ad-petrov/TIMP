@@ -1,0 +1,1 @@
+System "Spouse for an hour" (The system of ordering performers of household chores, rating, service areas of performers, permanent and temporary clients of the system, pricing policy, taking into account the rating and discounts)

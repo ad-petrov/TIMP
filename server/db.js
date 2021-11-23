@@ -3,7 +3,7 @@ const {ignoreRoot} = require("nodemon/lib/config/defaults");
 
 module.exports = new Sequelize(
     process.env.DB_NAME,
-    process.env.USER,
+    process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
         dialect:'postgres',

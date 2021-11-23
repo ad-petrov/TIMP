@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Муж на час</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://cdn-icons.flaticon.com/png/512/4042/premium/4042024.png?token=exp=1634935931~hmac=60b4f62cf80744c86e4b8a3728aea277">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+  body {
+      font: 400 15px Futura, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  .notion{
+      color: #1c1f23;
+  }
+  a {
+  color: whitesmoke;
+  text-decoration: none
+}
+  .header {
+  display: flex;
+  min-height: 100vh;
+  padding: 8px 50px;
+  background: #1c1f23;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 70%;
+}
+
+  f{
+      text-transform: uppercase;
+    position: relative;
+    color: whitesmoke;
+    font-family: Futura, sans-serif;
+    font-size: 6em;
+    font-weight: 600;
+  }
+  h1 {
+      text-transform: uppercase;
+    position: relative;
+    color: whitesmoke;
+    font-family: Futura, sans-serif;
+    font-size: 3em;
+    font-weight: 600;
+}
+  p {
+  position: relative;
+  font-family: Futura, sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+  m{
+       font-family: Futura;
+  text-transform: uppercase;
+  color: whitesmoke;
+  align-self: center;
+      font-weight: 900;
+  }
+  .header__title{
+  font-family: Futura;
+  text-transform: uppercase;
+  color: whitesmoke;
+  align-self: center;
+      font-weight: 900;
+  transform: translateX(0);
+  animation-name: header_anim;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.img1{
+  transform: translateY(0);
+  animation-name: img1_anim;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.img3{
+    display: block;
+    float: right;
+    margin-right: 100px;
+}
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 25px;
+      font-family: Futura;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 450;
+      margin-bottom: 30px;
+  }
+  .jumbotron {
+      background-color: #1c1f23;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Futura, sans-serif;
+      font-size: 30px;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #1c1f23;
+      font-size: 50px;
+  }
+
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #1c1f23;
+  }
+  .carousel-indicators li {
+      border-color: #1c1f23;
+  }
+  .carousel-indicators li.active {
+      background-color: #1c1f23;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #1c1f23;
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #1c1f23;
+      background-color: #fff !important;
+      color: #1c1f23;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #1c1f23 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #1c1f23;
+      color: whitesmoke;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #1c1f23;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #1c1f23 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #1c1f23;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+
+}
+  @keyframes header_anim {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes img1_anim {
+  from {
+    transform: translateY(-120%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<header class="header">
+    <f class="header__title">Муж<br>на час</f>
+    <p class="img1"><img src="1.png" width="1109" height=”1050”></p>
+  </header>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#myPage">Главная</a>
+</div>
+<div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="#about">О НАС</a></li>
+<li><a href="#services">УСЛУГИ</a></li>
+<li><a href="#portfolio">МАСТЕРА</a></li>
+<li><a href="#pricing">ЦЕНЫ</a></li>
+<li><a href="#contact">КОНТАКТЫ</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="jumbotron text-center">
+<m>МЫ СДЕЛАЕМ РАБОТУ ПО ДОМУ ЗА ВАС</m>
+<p>Вы можете подписаться на нашу рассылку</p>
+<form class="form-inline">
+<div class="input-group">
+<input type="email" class="form-control" size="50" placeholder="Email" required>
+<div class="input-group-btn">
+<button type="button" class="btn btn-danger">Подписаться</button>
+</div>
+</div>
+</form>
+</div>
+
+<div id="about" class="container-fluid">
+<div class="row">
+<div class="col-sm-8">
+<h2>О нашей компании</h2><br>
+    <h4> <strong>Нет</strong> мужчины в доме? <br> Мужу <strong>некогда</strong> заниматься мужской работой? <br><strong>Не хватает инструментов</strong>, чтобы повесить карниз? <br><strong>Некому</strong> собрать купленную мебель? <br>Перегорела люстра, отвалился кафель, не работает розетка?</h4><br>
+<p>Если услуги профессиональных мастеров в Санкт-Петербурге — это то, что Вы ищете, Вы пришли в нужное место. Мы берем на себя огромное количество различных заданий — от замены лампочки до подвешивания Вашего телевизора с плоским экраном или установки новых книжных полок. Если Вы считаете, что Ваш запрос слишком необычный, позвоните нам в любом случае — мы можем Вас удивить …</p>
+</div>
+<div class="col-sm-4">
+    <p class="img2"><img src="23.svg" width="409" height=”550”></p>
+</div>
+</div>
+</div>
+<div class="container-fluid bg-grey">
+<div class="row">
+<div class="col-sm-4">
+    <p class="img2"><img src="five.svg" width="409" height=”550”></p>
+</div>
+<div class="col-sm-8">
+<h2>Наша политика</h2><br>
+<h4><strong></strong> Мы ценим каждого нашего клиента, поэтому разработали систему скидок: после 5 заказа каждый наш клиент приобретает статус постоянного. Постоянным клиентам на почту приходят промокоды на скидки от 3% до 10%.<br>Не забудьте подписаться на нашу почтовую рассылку! Так Вы не пропустите акции и сезонные предложения</h4>
+</div>
+</div>
+</div>
+
+<div id="services" class="container-fluid text-center">
+<h2>УСЛУГИ</h2>
+<h4>Мы предлагаем</h4>
+<br>
+<div class="row slideanim">
+<div class="col-sm-4">
+<span class="glyphicon glyphicon-off logo-small"></span>
+<h4>РЕМОНТ ПК</h4>
+<p></p>
+</div>
+<div class="col-sm-4">
+<span class="glyphicon glyphicon-home logo-small"></span>
+<h4>БЫТОВОЙ РЕМОНТ</h4>
+<p></p>
+</div>
+<div class="col-sm-4">
+<span class="glyphicon glyphicon-lock logo-small"></span>
+<h4>РАБОТА ЭЛЕКТРИКА</h4>
+<p></p>
+</div>
+</div>
+<br><br>
+<div class="row slideanim">
+<div class="col-sm-4">
+<span class="glyphicon glyphicon-bed logo-small"></span>
+<h4>СБОРКА МЕБЕЛИ</h4>
+<p> </p>
+</div>
+<div class="col-sm-4">
+<span class="glyphicon glyphicon-certificate logo-small"></span>
+<h4>СВЕРЛЕНИЕ</h4>
+<p></p>
+</div>
+<div class="col-sm-4">
+<span class="glyphicon glyphicon-wrench logo-small"></span>
+<h4 style="color:#303030;">РАБОТА САНТЕХНИКА</h4>
+<p></p>
+</div>
+</div>
+</div>
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+<h2>Наши мужья</h2><br>
+<h4>Вы можете заказать их на час или заказать конкретную услугу</h4>
+<div class="row text-center slideanim">
+<div class="col-sm-4">
+<div class="thumbnail">
+<img src="2.jpeg" alt="Paris" width="400" height="300">
+<p><strong>Илья</strong></p>
+<p>Эксперт в починке компьютеров <br> Гениальный сборщик мебели <br> Починит все розетки<br> <br> <strong>Рейтинг</strong> ⭐️⭐️⭐️⭐️</p>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="thumbnail">
+<img src="3.jpeg" alt="New York" width="400" height="300">
+<p><strong>Сергей</strong></p>
+    <p>Эксперт в сверлении стен <br> Починит трубы и устранит протечки  <br> Сделает мелкий и крупный бытовой ремонт <br> <br> <strong>Рейтинг</strong> ⭐️⭐️⭐️⭐️</p>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="thumbnail">
+<img src="7.jpeg" alt="San Francisco" width="400" height="300">
+<p><strong>Александр</strong></p>
+<p>Починит Ваш компьютер <br> Просверлит все отверстия и повесит полки <br> Разберется с электричеством<br> <br> <strong>Рейтинг</strong> ⭐⭐️⭐️⭐️⭐️</p>
+</div>
+</div>
+</div><br>
+<h2>Отзывы наших клиентов</h2>
+<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+
+<ol class="carousel-indicators">
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+<li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
+
+<div class="carousel-inner" role="listbox">
+<div class="item active">
+<h4>"Обращаюсь в эту компанию уже не первый раз.<br> После стиральной машины починили электрические <br>пробки в квартире. Больше не ломаются!"<br><br><span>Мария Луценко</span></h4>
+</div>
+<div class="item">
+<h4>"Золотые руки! Приехал в течение получаса, очень <br> быстро повесил два карниза, три люстры, и поставил бортики на ванную. <br>Все качественно, быстро и аккуратно! Рекомендую!"<br><br><span>Александр Лакиза</span></h4>
+</div>
+<div class="item">
+<h4>"Мастер собрал и повесил люстру, повесил и собрал <br>карниз, часы, картину, держатель для туалетной бумаги. <br>Все сделал быстро, аккуратно. Работой остались довольны. Всем рекомендуем."<br><br><span>Егор Ливада</span></h4>
+</div>
+</div>
+
+<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+</div>
+
+<div id="pricing" class="container-fluid">
+<div class="text-center">
+<h2>Цены</h2>
+<h4>Выберете подходящий Вам план</h4>
+</div>
+<div class="row slideanim">
+<div class="col-sm-4 col-xs-12">
+<div class="panel panel-default text-center">
+<div class="panel-heading">
+<h1>Одна услуга</h1>
+</div>
+<div class="panel-body">
+<p><strong>20</strong> Видов услуг</p>
+<p><strong>45</strong> Минут приезд</p>
+<p><strong>5</strong>% Скидка постоянным клиентам</p>
+<p><strong>2</strong> Года гарантии</p>
+<p><strong>Бесплатный</strong> выезд</p>
+</div>
+<div class="panel-footer">
+<h3>от 250 рублей</h3>
+<h4>за услугу</h4>
+<button class="btn btn-lg"><a href="checkout.html">Заказать</a></button>
+</div>
+</div>
+</div>
+<div class="col-sm-4 col-xs-12">
+<div class="panel panel-default text-center">
+<div class="panel-heading">
+<h1>Муж на час</h1>
+</div>
+<div class="panel-body">
+<p><strong>25</strong>% Выгоды </p>
+<p><strong>45</strong> Минут выезд</p>
+<p><strong>10</strong>% Скидка постоянным клиентам</p>
+<p><strong>2</strong> Года гарантии</p>
+<p><strong>Бесплатный</strong> выезд</p>
+</div>
+<div class="panel-footer">
+<h3>1100  рублей</h3>
+<h4>за 60 минут</h4>
+<button class="btn btn-lg"><a href="checkout.html">Заказать</a></button>
+</div>
+</div>
+</div>
+<div class="col-sm-4 col-xs-12">
+<div class="panel panel-default text-center">
+<div class="panel-heading">
+<h1>+30 минут</h1>
+</div>
+<div class="panel-body">
+<p><strong>100</strong>% Результат</p>
+<p><strong>20</strong>% Выгоды</p>
+<p><strong>3</strong>% Скидка постоянным клиентам</p>
+<p><strong>2</strong> Года гарантии</p>
+<p><strong>Бесплатное</strong> продление</p>
+</div>
+<div class="panel-footer">
+<h3>450 рублей</h3>
+<h4>за каждые дополнительные 30 минут</h4>
+<button class="btn btn-lg"><a href="checkout.html">Заказать</a></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="contact" class="container-fluid bg-grey">
+    <p class="img3"><img src="mail.svg" width="409" height=”550”></p>
+<div class="row">
+    <div class="col-sm-5"><h4>Свяжитесь с нами, если остались вопросы</h4>
+<h4><br><span class="glyphicon glyphicon-map-marker"></span> Санкт-Петербург, Россия</h4>
+<h4><span class="glyphicon glyphicon-phone"></span> +7 (921) 453-12-56</h4>
+<h4><span class="glyphicon glyphicon-envelope"></span> cyberknopa@gmail.com</h4>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="container-fluid text-center">
+<a href="#myPage" title="To Top">
+<span class="glyphicon glyphicon-chevron-up"></span>
+</a>
+<p><a class="notion" href="https://almond-grouse-35a.notion.site/ea75ee6250904836af108d4a495845ef">Узнать больше о нашей команде</a></p>
+</footer>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+  });
+
+  // Slide in elements on scroll
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+</body>
+</html>
